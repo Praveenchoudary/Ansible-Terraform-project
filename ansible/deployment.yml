@@ -1,5 +1,5 @@
 ---
-- hosts: aws_ec2
+- hosts: awsec2
   become: yes
   connection: ssh
   user: ec2-user
