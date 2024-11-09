@@ -1,8 +1,8 @@
 resource "aws_launch_template" "web_server_as" {
     name = "myproject"
-    image_id           = "ami-00f251754ac5da7f0"
+    image_id           = "ami-0984f4b9e98be44bf"
     instance_type = "t2.micro"
-    key_name = "mustafakey-pair"
+    key_name = "KEYPAIRNEW"
     security_groups = [aws_security_group.web_server.id]
 }
    
@@ -11,7 +11,7 @@ resource "aws_launch_template" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-0883b34c988bcbf20", "subnet-0f4f4322d734fcc38"]
+     subnets = ["subnet-0a6ec0c7b581fd5e9", "subnet-042c6d878bcf0eabe"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
